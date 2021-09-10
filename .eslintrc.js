@@ -11,18 +11,17 @@ module.exports = {
   },
   plugins: ["jest"],
   rules: {
+    "no-shadow": "off",
+    "no-return-await": "off",
+    "no-undef": "off",
+    "func-names": "off",
     "no-param-reassign": "off",
     "no-plusplus": "off",
     "default-case": "off",
     "no-useless-escape": "off",
     "no-alert": "off",
     "no-console": "off",
-    "max-len": [
-      "error",
-      {
-        ignoreComments: true,
-      },
-    ],
+    "max-len": "off",
     "import/prefer-default-export": "off",
   },
 };
