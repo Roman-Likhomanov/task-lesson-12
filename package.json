@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Roman-Likhomanov/task-lesson-12#readme",
   "dependencies": {
+    "live-server": "^1.2.1",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
@@ -41,6 +42,6 @@
   },
   "lint-staged": {
     "*.js": "eslint --fix",
-    "*.{js,css,md}": "prettier --write"
+    "*.{js,css,md,json,yml,html}": "prettier --write"
   }
 }
