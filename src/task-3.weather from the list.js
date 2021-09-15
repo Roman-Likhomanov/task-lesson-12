@@ -14,8 +14,7 @@
     h2.innerText = data.main.temp;
 
     const icon = document.createElement("img");
-    icon.src =
-      `http://openweathermap.org/img/wn/${  data.weather[0].icon  }@2x.png`;
+    icon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
 
     div.appendChild(h1);
     div.appendChild(h2);
@@ -38,10 +37,10 @@
   const jsonData2 = await getWeather(cityName);
   drawWeather(weatherInfoEl, jsonData2);
 
-  const key = "key";
+  const city = "city";
 
   async function readList() {
-    const result = localStorage.getItem(key);
+    const result = localStorage.getItem(city);
     if (result === null) {
       return [];
     }
@@ -49,7 +48,7 @@
   }
 
   function saveList(items) {
-    localStorage.setItem(key, JSON.stringify(items));
+    localStorage.setItem(city, JSON.stringify(items));
   }
 
   // Отрисовывает список
