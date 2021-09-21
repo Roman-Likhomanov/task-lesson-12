@@ -1,3 +1,4 @@
 export function saveList(items) {
-  localStorage.setItem(key, JSON.stringify(items));
+  const city = "city";
+  localStorage.setItem(city, JSON.stringify(items));
 }

@@ -11,6 +11,7 @@ module.exports = {
   },
   plugins: ["jest"],
   rules: {
+    "no-new": "off",
     "import/extensions": "off",
     "no-shadow": "off",
     "no-return-await": "off",

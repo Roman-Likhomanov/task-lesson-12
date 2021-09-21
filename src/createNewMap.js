@@ -1,6 +1,14 @@
-export function createNewMap(data) {
+export async function createNewMap(data) {
+  if (document.querySelectorAll(".ymaps-2-1-79-map")) {
+    document.querySelectorAll(".ymaps-2-1-79-map").forEach((e) => e.remove());
+  }
+
   const {lat} = data.coord;
   const {lon} = data.coord;
-  const map = new YMaps.Map(document.getElementById("YMapsID"));
-  map.setCenter(new YMaps.GeoPoint(lat, lon), 10);
+  ymaps.ready(() => {
+    new ymaps.Map("YMapsID", {
+      center: [lat, lon],
+      zoom: 10,
+    });
+  });
 }

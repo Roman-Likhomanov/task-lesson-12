@@ -3,5 +3,12 @@ export async function getWeather(cityName) {
   const response2 = await fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`
   );
-  return await response2.json();
+
+  const data = await response2.json();
+
+  if (data.cod === "404") {
+    throw new Error(alert("Пожалуйста, введите город корректно!"));
+  }
+
+  return data;
 }

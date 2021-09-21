@@ -10,15 +10,15 @@ import { createNewMap } from "./createNewMap.js";
   const form = document.querySelector("form");
   const listEl = document.querySelector("#list");
   const weatherInfoEl = document.querySelector("#weatherInfo");
-  //  const key = "key";
 
   const userCoordinates = await getUserCoordinates();
   const weatherByCoordinates = await getWeather(userCoordinates);
 
-  drawWeather(weatherByCoordinates);
+  drawWeather(weatherInfoEl, weatherByCoordinates);
   createNewMap(weatherByCoordinates);
 
   const items = await readList();
+
   drawList(listEl, items);
 
   form.addEventListener("submit", async (ev) => {
@@ -29,16 +29,20 @@ import { createNewMap } from "./createNewMap.js";
     const cityName2 = input.value;
     input.value = "";
 
-    items.push(cityName2);
-
-    if (items.length > 10) {
-      items.shift();
-    }
-    drawList(listEl, items);
-
-    saveList(items);
-
     const weather = await getWeather(cityName2);
+    const items = await readList();
+    items.push(cityName2);
+    console.log(items);
+    const items2 = Array.from(new Set(items));
+
+    if (items2.length > 10) {
+      items2.shift();
+    }
+
+    console.log(items2);
+    drawList(listEl, items2);
+    saveList(items2);
+
     drawWeather(weatherInfoEl, weather);
     createNewMap(weather);
   });
@@ -51,4 +55,5 @@ import { createNewMap } from "./createNewMap.js";
       createNewMap(weather2);
     }
   });
+  // localStorage.clear()
 })();

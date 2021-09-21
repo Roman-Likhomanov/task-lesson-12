@@ -11,7 +11,7 @@ module.exports = {
       arrowFunction: false,
     },
   },
-  target: "node",
+  target: "web",
   mode: process.env.NODE_ENV === "development" ? "development" : "production",
   plugins: [
     new HtmlWebpackPlugin({

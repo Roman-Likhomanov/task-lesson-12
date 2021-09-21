@@ -1,5 +1,6 @@
 export async function readList() {
-  const result = localStorage.getItem(key);
+  const city = "city";
+  const result = localStorage.getItem(city);
   if (result === null) {
     return [];
   }
