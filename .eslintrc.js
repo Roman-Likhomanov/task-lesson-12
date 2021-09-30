@@ -11,6 +11,8 @@ module.exports = {
   },
   plugins: ["jest"],
   rules: {
+    "no-unused-vars": "off",
+    "no-proto": "off",
     "no-new": "off",
     "import/extensions": "off",
     "no-shadow": "off",
