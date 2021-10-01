@@ -1,14 +1,14 @@
 module.exports = (api) => ({
-    presets: [
-      [
-        "@babel/preset-env",
-        {
-          useBuiltIns: "entry",
-          targets: api.caller((caller) => caller && caller.target === "node")
-            ? { node: "current" }
-            : { chrome: "58", ie: "11" },
-        },
-      ],
+  presets: [
+    [
+      "@babel/preset-env",
+      {
+        useBuiltIns: "entry",
+        targets: api.caller((caller) => caller && caller.target === "node")
+          ? { node: "current" }
+          : { chrome: "58", ie: "11" },
+      },
     ],
-    plugins: ["@babel/plugin-transform-runtime"],
-  });
+  ],
+  plugins: ["@babel/plugin-transform-runtime"],
+});
