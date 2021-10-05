@@ -6,7 +6,7 @@ describe("readList", () => {
     const city = "city";
     jest.spyOn(window.localStorage.__proto__, "getItem");
 
-    expect(readList()).toBe([]);
+    expect(readList()).resolves.toBe([]);
     expect(localStorage.getItem).toHaveBeenCalledWith("city");
   });
 
