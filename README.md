@@ -7,3 +7,4 @@
 :white_check_mark: Если Вы введете несуществующий город, то приложение Вам это подскажет.
 
 При разработке приложения использованы инструменты CI(jest, eslint, prettier, webpack).
+http://roman-likhomanov.github.io/task-lesson-12/
